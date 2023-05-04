@@ -42,7 +42,8 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: ratarov/yamdb:latest 
+          context: ./api_yamdb/
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb:latest 
   
   deploy:
     runs-on: ubuntu-latest
@@ -57,11 +58,12 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           cd infra
+          sudo docker-compose stop
+          sudo docker-compose rm web
           sudo docker-compose up -d --build
-          docker-compose exec web python manage.py makemigrations reviews
-          docker-compose exec web python manage.py migrate
-          docker-compose exec web python manage.py createsuperuser
-          docker-compose exec web python manage.py collectstatic --no-input
+          sudo docker-compose exec web python manage.py makemigrations reviews
+          sudo docker-compose exec web python manage.py migrate
+          sudo docker-compose exec web python manage.py collectstatic --no-input
   
   send_message:
     runs-on: ubuntu-latest
