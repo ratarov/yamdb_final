@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='django#super#secret#key!!111')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '51.250.19.49']
 
 
 # Application definition

@@ -1,7 +1,9 @@
 ## API for YaMDB
 ### Описание
 **Командный проект: API для сервиса отзывов YaMDB.**
-**Настройка CI/CD с помощью GitHub Actions.** ![image](https://github.com/ratarov/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+**Настройка CI/CD с помощью GitHub Actions.** [![YaMDb workflow](https://github.com/ratarov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/ratarov/yamdb_final/actions/workflows/yamdb_workflow.yml)
+Развернутый проект:
+http://51.250.19.49/
 ### Используемые технологии:
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![image](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
